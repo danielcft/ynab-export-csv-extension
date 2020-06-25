@@ -50,7 +50,7 @@ function downloadYnabFile (selectedText, options) {
 }
 
 function Parse (copiedText, regex, newLineSeparator) {
-  return copiedText.split(newLineSeparator).map(line => {
+  return copiedText.split(newLineSeparator || '\n').map(line => {
     var r = regex.exec(line)
     regex.lastIndex = 0
     return r
